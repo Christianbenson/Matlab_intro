@@ -73,6 +73,22 @@ plot(minsNzerosX, minsNzerosY, '+r')
 axis([-1 1 -5 5]);
 
 %% D6
+clc
+clear
+close all
+N = 10;
+diagval = 3;
+subdiagval = 4;
+v = subdiagval*ones(1,N-1);
+M = diagval*eye(N) + diag(v, 1) + diag(v, -1)
+det(M)
+
+%% D7 Test complexmat
+% PARAMS
+N   = 8; 
+z0  = -1 + 1i;
+z1  = 1 - 1i;
+complexmat(N, z0, z1)
 
 
 

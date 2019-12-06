@@ -65,19 +65,22 @@ figure
 plot(x,h(x))
 grid on
 hold on
-plot(x, h(local_minima)*ones(length(x)), 'g')
-plot(local_minima*ones(length(x)), linspace(-10,h(linspaceto)), 'g')
-
 roots = [fzero(h, local_minima-1), fzero(h, local_minima+1)]
-plot(x, h(roots(1))*ones(length(x)), 'g')
-plot(roots(1)*ones(length(x)), linspace(-10,h(linspaceto)), 'g')
-plot(x, h(roots(2))*ones(length(x)), 'g')
-plot(roots(2)*ones(length(x)), linspace(-10,h(linspaceto)), 'g')
 
 minsNzerosX = [local_minima, roots(1), roots(2)];
 minsNzerosY = [h(local_minima), h(roots(1)), h(roots(2))];
-plot(minsN
+plot(minsNzerosX, minsNzerosY, '+r')
+axis([-1 1 -5 5]);
 
+%% D6
+clc
+clear
+close all
+N = 8;
+diag = 3;
+sub = 4;
+v = sub*ones(1,N-1);
+M = main*eye(N) + diag(v, 1) + diag(v, -1)
 
 
 
