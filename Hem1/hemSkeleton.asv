@@ -1,0 +1,9 @@
+%% Hemuppgift 1:
+
+prompt = "Enter a number/vector to approximate square root of: \n";
+S = input(prompt);
+x_0 = S./2;
+
+for 
+%% Function to calculate next iteration of sqrt(x) (aka X_k+1)
+x_iter = @(x, S) (x + (S./x))/2; 
