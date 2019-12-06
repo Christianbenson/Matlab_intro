@@ -38,12 +38,43 @@ clear
 g = @(x) (cos(exp(x)))./(1-x);
 local_minima = fminsearch(g, 2.5)
 
+
 x = linspace(2,3);
 figure
 plot(x,g(x))
+hold on
+plot(x, g(local_minima)*ones(length(x)), 'g')
+plot(local_minima*ones(length(x)), linspace(-1,1), 'g')
 grid on
 
 %% D5
+clf
+clc
+close all
+clear
+
+h = @(x) 8*x.^2 - x - 3*exp(-x.^2); 
+local_minima = fminsearch(h, 0)
+local_min_val = h(local_minima)
+
+linspacefrom = -2;
+linspaceto = 2;
+
+x = linspace(linspacefrom,linspaceto);
+figure
+plot(x,h(x))
+grid on
+hold on
+roots = [fzero(h, local_minima-1), fzero(h, local_minima+1)]
+
+minsNzerosX = [local_minima, roots(1), roots(2)];
+minsNzerosY = [h(local_minima), h(roots(1)), h(roots(2))];
+plot(minsNzerosX, minsNzerosY, '+r')
+axis([-1 1 -5 5]);
+
+%% D6
+
+
 
 
 
