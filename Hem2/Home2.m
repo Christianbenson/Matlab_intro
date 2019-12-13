@@ -1,5 +1,6 @@
 clear
 clc
+close all
 
 m = complexmat(1000, -2+1i, 1-1i);
 v = arrayfun(@(x) converge(x),m);
