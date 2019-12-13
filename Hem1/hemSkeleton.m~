@@ -1,0 +1,9 @@
+%% Hemuppgift 1 matlab-basic
+clear
+clc
+
+inputPrompt = 'Enter value to calculate sqrt of: ';
+
+x_init = input(inputPrompt);
+
+sqrt_iter = @(x, S) (x + (S./x)) / 2;
