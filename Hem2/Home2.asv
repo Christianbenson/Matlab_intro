@@ -1,5 +1,0 @@
-clear
-clc
-
-m = complexmat(1000, -2+i, 1-i)
-v = arrayfun(@(x) converge(x),m);
